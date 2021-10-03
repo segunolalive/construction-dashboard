@@ -1,0 +1,35 @@
+.root {
+  padding-bottom: 1rem;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.searchContainer {
+  width: 100%;
+  max-width: 500px;
+  padding-bottom: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .searchContainer {
+    padding-bottom: 0;
+  }
+}
+
+.filters {
+  flex-grow: 1;
+  display: flex;
+  padding-left: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filter {
+  margin-right: 1rem;
+}
+
+.filter input {
+  display: inline-block;
+  margin-right: 0.25rem;
+}
