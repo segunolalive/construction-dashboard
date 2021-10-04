@@ -15,7 +15,6 @@ app.use(express.static(path.join(path.dirname(__dirname), '/build')))
 
 app.get('/companies', (req, res, next) => {
   const { search, specialties } = req.query
-  console.log(req.query);
   if (search) {
     let data = db.filter((company) =>
       company.name.toLocaleLowerCase().includes(search.toLowerCase())

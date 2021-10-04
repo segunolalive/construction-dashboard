@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useAbortableFetch, REQUEST_STATUSES } from 'hooks'
 import Layout from 'components/Layout'
 import { Filters, Specialties } from 'components/Filters'
-import { CompanyCard, CompanyProps } from 'components/CompanyCard'
+import { CompaniesList, CompanyProps } from 'components/Company'
 
 const serverUrl = process.env.REACT_APP_SERVER_URL || ''
 
@@ -34,11 +34,7 @@ export default function Dashboard() {
       {status === REQUEST_STATUSES.SUCCESS && companies?.length === 0 ? (
         <div>No Records Matched Your Search</div>
       ) : null}
-      <div>
-        {companies?.map((company) => (
-          <CompanyCard {...company} key={company.id} />
-        ))}
-      </div>
+      {companies && <CompaniesList companies={companies} />}
     </Layout>
   )
 }

@@ -56,7 +56,6 @@ export function useRequest<T>(
 
   const makeRequest = useCallback(
     async function (signal: AbortSignal) {
-      console.log({url});
       if (!url) {
         setStatus(REQUEST_STATUSES.IDLE)
         setData(null)
